@@ -23,6 +23,6 @@ public class ResultNumbers {
             result = hexa[value % base] + result;
             value /= base;
         }
-        return Integer.parseInt(result);
+        return Integer.parseInt(result,base);
     }
 }

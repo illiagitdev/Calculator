@@ -23,14 +23,7 @@ public class Main {
         System.out.println("vector v1: "+v1.toString() );
         System.out.println("vector v2: "+v2.toString() );
 
-        System.out.println("vector multiplication "+vectotMult(v1, v2));
+        System.out.println("vector multiplication "+v1.vectotMult(v2));
     }
 
-    public static Vector vectotMult(Vector a, Vector b) {
-        int x = a.getVector().getY()* b.getVector().getZ()-b.getVector().getY()*a.getVector().getZ();
-        int y = -(a.getVector().getX()*b.getVector().getZ() - b.getVector().getX()*a.getVector().getZ());
-        int z = a.getVector().getX()*b.getVector().getY() - b.getVector().getX()*a.getVector().getY();
-        Vector c = new Vector(x,y,z);
-        return c;
-    }
 }

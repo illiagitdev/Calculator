@@ -41,10 +41,19 @@ public class Point3D {
 
     @Override
     public String toString() {
-        return "Point3D{" +
+        return "{" +
                 "x=" + x +
                 ", y=" + y +
                 ", z=" + z +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Point3D){
+            return (x==((Point3D) obj).getX())&&(y==((Point3D) obj).getY())&&(z==((Point3D) obj).getZ());
+        }
+        else
+        return false;
     }
 }

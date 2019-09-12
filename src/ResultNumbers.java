@@ -13,6 +13,20 @@ public class ResultNumbers {
         System.out.println("Octal number: " + convertString(numberD, 8));
 
         System.out.println("Hexadecimal number: " + convertString(numberD, 16));
+
+        System.out.println(Integer.toBinaryString(numberD));
+        System.out.println(~numberD+1);
+        System.out.println(Integer.toBinaryString(-numberD));
+        System.out.println(Integer.toBinaryString(numberD|(-10)));
+        System.out.println("test!!!!");
+        // потрібна ще одна одиничка на початок, щоб були всі 32 розряди
+        System.out.println("my  way "+convertString((Integer.MAX_VALUE+numberD+1),8));
+        System.out.println("system   "+Integer.toBinaryString(Integer.MIN_VALUE+numberD+1));
+        System.out.println("system   "+Integer.toOctalString(Integer.MIN_VALUE+numberD+1));
+        System.out.println("system   "+Integer.toHexString(Integer.MIN_VALUE+numberD+1));
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(convertString((Integer.MAX_VALUE),8));
+
     }
 
     static final char[] hexa = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -32,4 +46,6 @@ public class ResultNumbers {
         }
         return result;
     }
+
+
 }

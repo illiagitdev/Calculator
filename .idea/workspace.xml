@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4f6bbb-9b55-4460-aa30-a050879e7779" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tasks/MessagesReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/SheikSotr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/SheikSotr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasks/MessagesReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/MessagesReader.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding>
                 <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
                 <element signature="method#showArray#0;class#MessagesReader#0" />
@@ -46,8 +44,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/math_vectors/Calculator.java" />
-        <option value="$PROJECT_DIR$/src/tasks/MessagesReader.java" />
         <option value="$PROJECT_DIR$/src/tasks/SheikSotr.java" />
+        <option value="$PROJECT_DIR$/src/tasks/MessagesReader.java" />
       </list>
     </option>
   </component>
@@ -119,7 +117,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SheikSotr">
+  <component name="RunManager" selected="Application.MessagesReader">
     <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="math_vectors.Calculator" />
       <module name="Calculator" />
@@ -175,8 +173,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SheikSotr" />
         <item itemvalue="Application.MessagesReader" />
+        <item itemvalue="Application.SheikSotr" />
         <item itemvalue="Application.Calculator" />
         <item itemvalue="Application.Lesson3" />
         <item itemvalue="Application.ResultNumbers" />
@@ -210,12 +208,12 @@
       <workItem from="1567701813173" duration="6483000" />
       <workItem from="1568150075668" duration="5743000" />
       <workItem from="1568282938191" duration="6118000" />
-      <workItem from="1568620365526" duration="10220000" />
+      <workItem from="1568620365526" duration="13513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10220000" />
+    <option name="totallyTimeSpent" value="13513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -325,7 +323,7 @@
     <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
             <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
             <element signature="method#showArray#0;class#MessagesReader#0" />

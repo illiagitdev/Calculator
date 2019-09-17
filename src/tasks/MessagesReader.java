@@ -221,17 +221,17 @@ public class MessagesReader {
         int satellitID1=returnInteger(array[3]);
         int satElevation1=returnInteger(array[4]);
         int satAzimuth1=returnInteger(array[5]);
-        int SignalToNoise1=returnInteger(array[6]);
+        int signalToNoise1=returnInteger(array[6]);
 
         int satellitID2=returnInteger(array[7]);
         int satElevation2=returnInteger(array[8]);
         int satAzimuth2=returnInteger(array[9]);
-        int SignalToNoise2=returnInteger(array[10]);
+        int signalToNoise2=returnInteger(array[10]);
 
         int satellitID3=returnInteger(array[11]);
         int satElevation3=returnInteger(array[12]);
         int satAzimuth3=returnInteger(array[13]);
-        int SignalToNoise3=returnInteger(array[14]);
+        int signalToNoise3=returnInteger(array[14]);
 
         System.out.println("GSV - GNSS DOP and Active Satellites");
 
@@ -243,19 +243,19 @@ public class MessagesReader {
         System.out.println("Satellite elevation, degrees 90 max "+satElevation1);
         System.out.println("Satellite azimuth, degrees True, 000 to 359 "+satAzimuth1);
         System.out.println("Signal-to-noise ration (C/No) 00-99 dB-Hz. Value of zero means that the satellite is predicted to\n" +
-                "be on the visible sky but it isn't being tracked. "+satellitID1);
+                "be on the visible sky but it isn't being tracked. "+signalToNoise1);
 
         System.out.println("Satellite ID (PRN) number "+satellitID2);
         System.out.println("Satellite elevation, degrees 90 max "+satElevation2);
         System.out.println("Satellite azimuth, degrees True, 000 to 359 "+satAzimuth2);
         System.out.println("Signal-to-noise ration (C/No) 00-99 dB-Hz. Value of zero means that the satellite is predicted to\n" +
-                "be on the visible sky but it isn't being tracked. "+satellitID2);
+                "be on the visible sky but it isn't being tracked. "+signalToNoise2);
 
         System.out.println("Satellite ID (PRN) number "+satellitID3);
         System.out.println("Satellite elevation, degrees 90 max "+satElevation3);
         System.out.println("Satellite azimuth, degrees True, 000 to 359 "+satAzimuth3);
         System.out.println("Signal-to-noise ration (C/No) 00-99 dB-Hz. Value of zero means that the satellite is predicted to\n" +
-                "be on the visible sky but it isn't being tracked. "+satellitID3);
+                "be on the visible sky but it isn't being tracked. "+signalToNoise3);
     }
 
     /**

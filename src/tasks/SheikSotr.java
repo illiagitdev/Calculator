@@ -18,7 +18,7 @@ public class SheikSotr {
          * Shaker sorting
          */
         int tmp;
-        for (int i = 0; i < array1.length; i++) {
+        for (int i = 0; i < array1.length - 1; i++) {
             for (int j = i; j < array1.length - (i + 1); j++) {
                 if (array1[j] > array1[j + 1]) {
                     tmp = array1[j];
@@ -44,7 +44,7 @@ public class SheikSotr {
      */
     private static int[] bubbleSort(int[] array) {
         int swap;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             for (int j = 0; j < array.length - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
                     swap = array[j];

@@ -57,7 +57,7 @@ public class MessagesReader {
                     break;
                 }
                 default: {
-                    System.out.println("Not NMEA message or no metod to reat it.");
+                    System.out.println("Not NMEA message or no method to read it.");
                     break;
                 }
             }
@@ -282,4 +282,3 @@ public class MessagesReader {
         return s.isEmpty() ? 0 : Integer.parseInt(s);
     }
 }
-

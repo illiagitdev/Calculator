@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4f6bbb-9b55-4460-aa30-a050879e7779" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lesson5/First.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lesson5/Lesson5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lesson5/Second.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lesson5/custom/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tasks/MessagesReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/MessagesReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasks/SheikSotr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/SheikSotr.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,31 +19,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#290#1444#1" />
-                <element signature="method#deshiferGGA#0;class#MessagesReader#0" />
-                <element signature="method#deshiferVTG#0;class#MessagesReader#0" />
-                <element signature="method#deshiferRMC#0;class#MessagesReader#0" />
-                <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
-                <element signature="method#showArray#0;class#MessagesReader#0" />
-                <element signature="docComment;method#returnDouble#0;class#MessagesReader#0" />
-                <element signature="docComment;method#returnInteger#0;class#MessagesReader#0" />
-                <marker date="1568731563476" expanded="true" signature="325:595" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,15 +30,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/math_vectors/Calculator.java" />
-        <option value="$PROJECT_DIR$/src/tasks/SheikSotr.java" />
-        <option value="$PROJECT_DIR$/src/tasks/MessagesReader.java" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1749" />
     <option name="y" value="-26" />
@@ -65,43 +38,6 @@
   </component>
   <component name="ProjectId" id="1QO0yeiOgYE1uZHLLoL20FXqlza" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Calculator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calculator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calculator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calculator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="math_vectors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calculator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -126,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MessagesReader">
+  <component name="RunManager" selected="Application.Lesson5">
     <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="math_vectors.Calculator" />
       <module name="Calculator" />
@@ -147,6 +83,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Lesson5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson5.Lesson5" />
+      <module name="Calculator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MessagesReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tasks.MessagesReader" />
       <module name="Calculator" />
@@ -156,13 +99,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResultNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ResultNumbers" />
-      <module name="Calculator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -182,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MessagesReader" />
+        <item itemvalue="Application.Lesson5" />
         <item itemvalue="Application.SheikSotr" />
+        <item itemvalue="Application.MessagesReader" />
         <item itemvalue="Application.Calculator" />
         <item itemvalue="Application.Lesson3" />
-        <item itemvalue="Application.ResultNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -219,46 +155,10 @@
       <workItem from="1568282938191" duration="6118000" />
       <workItem from="1568620365526" duration="17168000" />
       <workItem from="1568704054153" duration="16704000" />
+      <workItem from="1568735885151" duration="684000" />
+      <workItem from="1568737573532" duration="7649000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33872000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35536295" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32936078" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -269,12 +169,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -295,106 +189,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Lesson3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/math_vectors/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/math_vectors/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/SheikSotr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding>
-            <element signature="docComment;method#bubbleSort#0;class#SheikSotr#0" />
-            <element signature="method#bubbleSort#0;class#SheikSotr#0" />
-            <element signature="docComment;method#showArray#0;class#SheikSotr#0" />
-            <element signature="method#showArray#0;class#SheikSotr#0" />
-            <element signature="docComment;method#fillArray#0;class#SheikSotr#0" />
-            <element signature="method#fillArray#0;class#SheikSotr#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/math_vectors/Point3D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/math_vectors/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/sql/Time.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2862">
-          <caret line="70" column="11" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
-          <folding>
-            <element signature="e#1827#1828#0" expanded="true" />
-            <element signature="e#1854#1855#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="267" column="54" lean-forward="true" selection-start-line="267" selection-start-column="54" selection-end-line="267" selection-end-column="54" />
-          <folding>
-            <element signature="e#10720#10721#0" expanded="true" />
-            <element signature="e#10750#10751#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#290#1444#1" />
-            <element signature="method#deshiferGGA#0;class#MessagesReader#0" />
-            <element signature="method#deshiferVTG#0;class#MessagesReader#0" />
-            <element signature="method#deshiferRMC#0;class#MessagesReader#0" />
-            <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
-            <element signature="method#showArray#0;class#MessagesReader#0" />
-            <element signature="docComment;method#returnDouble#0;class#MessagesReader#0" />
-            <element signature="docComment;method#returnInteger#0;class#MessagesReader#0" />
-            <marker date="1568731563476" expanded="true" signature="325:595" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

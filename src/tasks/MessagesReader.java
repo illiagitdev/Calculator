@@ -6,7 +6,7 @@ import java.util.zip.Checksum;
 
 public class MessagesReader {
     public static void main(String[] args) {
-        String message = "$GPGSA,A,3,05,17,22,09,14,04,30,,,,,,1.8,1.2,1.3*32";
+        String message = "$GPRMC,165110.000,A,5601.0318,N,01211.3503,E,0.09,28.11,190706,,*35";
 
 //        $GPGSV,3,3,11,04,07,102,30,29,02,170,09,18,02,243,*42
 //        $GPGSV,3,3,11,04,07,102,30,29,02,170,09,18,02,243,*42
@@ -27,7 +27,7 @@ public class MessagesReader {
             String mesageType = head.substring(2);
             System.out.println(mesageType);
 
-            String[] array = message.substring(message.indexOf(",")+1, message.indexOf("*")).split(",");
+            String[] array = message.substring(message.indexOf(",") + 1, message.indexOf("*")).split(",");
             showArray(array);
 
             switch (mesageType) {
@@ -67,34 +67,52 @@ public class MessagesReader {
     }
 
     private static void deshiferGSA(String[] array) {
+        String workMode = array[0];
+        int fixType = returnInteger(array[1]);
+
+        int[] satelliteID = new int[12];
+        for (int i = 0; i < 12; i++) {
+            satelliteID[i] = returnInteger(array[2 + i]);
+        }
+
+        double PDOP = returnDouble(array[14]);
+        double HDOP = returnDouble(array[15]);
+        double VDOP = returnDouble(array[16]);
 
         System.out.println("GSA - GNSS DOP and Active Satellites");
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("Mode\n" +
+                "‘M’ = Manual, forced to operate in 2D or 3D mode\n" +
+                "‘A’ = Automatic, allowed to automatically switch 2D/3D " + workMode);
+        System.out.println("Fix type\n" +
+                "1 = Fix not available\n" +
+                "2 = 2D\n" +
+                "3 = 3D " + fixType);
+
+        for (int i = 0; i < 12; i++) {
+            System.out.println("Satellite ID "+(i+1)+": "+satelliteID[i]);
+        }
+
+        System.out.println("Position dilution of precision (00.0 to 99.9) " + PDOP);
+        System.out.println("Horizontal dilution of precision (00.0 to 99.9) " + HDOP);
+        System.out.println("Vertical dilution of precision (00.0 to 99.9) " + VDOP);
     }
 
     private static void deshiferGGA(String[] array) {
-        Date timeUTC = new Date((long) (Double.parseDouble(array[0]) * 1000));//todo: fix formats;
-        double latitude = Double.parseDouble(array[1]);
+        Date timeUTC = new Date((long) (returnDouble(array[0]) * 1000));//todo: fix formats;
+        double latitude = returnDouble(array[1]);
         String indicatorNS = array[2];
-        double longitude = Double.parseDouble(array[3]);
+        double longitude = returnDouble(array[3]);
         String indicatorEW = array[4];
-        int qualityIndicator = Integer.parseInt(array[5]);
-        int satellitesUsed = Integer.parseInt(array[6]);
-        double HDOP = Double.parseDouble(array[7]);
-        double altitude = Double.parseDouble(array[8]);
+        int qualityIndicator = returnInteger(array[5]);
+        int satellitesUsed = returnInteger(array[6]);
+        double HDOP = returnDouble(array[7]);
+        double altitude = returnDouble(array[8]);
         String altitudeIndex = array[9];
-        double geoidalSeparation = Double.parseDouble(array[10]);
+        double geoidalSeparation = returnDouble(array[10]);
         String geoidalSeparationIndex = array[11];
-        Date alignmentDGPS= array[12].isEmpty() ? new Date(0) :new Date((long) (Double.parseDouble(array[12]) * 1000));
-        int refStation = array[13].isEmpty() ? 0 : Integer.parseInt(array[13]);
+        Date alignmentDGPS = new Date((long) (returnDouble(array[12]) * 1000));
+        int refStation = returnInteger(array[13]);
 
         System.out.println("GGA - Global Positioning System Fix Data");
 
@@ -113,25 +131,38 @@ public class MessagesReader {
         System.out.println("altitudeIndex " + altitudeIndex);
         System.out.println("Geoidal Separation(meters) " + geoidalSeparation);
         System.out.println("geoidalSeparationIndex " + geoidalSeparationIndex);
-        System.out.println("DGPS alignment "+alignmentDGPS);
+        System.out.println("DGPS alignment " + alignmentDGPS);
         System.out.println("Differential reference station ID, 0000 ~ 1023\n" +
                 "NULL when DGPS not used " + refStation);
     }
 
     private static void deshiferVTG(String[] array) {
+        double courseTrue =returnDouble(array[0]);
+        String courseTrueID=array[1];
+        double courseMagnetic=returnDouble(array[2]);
+        String courseMagneticID=array[3];
+        double speedKnots =returnDouble(array[4]);
+        String speedKnotsID=array[5];
+        double speedKpH =returnDouble(array[6]);
+        String speedKpHID=array[7];
+
+
         System.out.println("VTG - Course Over Ground and Ground Speed");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+
+        System.out.println("Course over ground, degrees True (000.0 ~ 359.9) "+courseTrue);
+        System.out.println("courseTrue "+courseTrueID);
+        System.out.println("Course over ground, degrees Magnetic (000.0 ~ 359.9) "+courseMagnetic);
+        System.out.println("courseMagnetic "+courseMagneticID);
+        System.out.println("Speed over ground in knots (000.0 ~ 999.9) "+speedKnots);
+        System.out.println("speedKnots "+speedKnotsID);
+        System.out.println("Speed over ground in kilometers per hour (0000.0 ~ 1800.0) "+speedKpH);
+        System.out.println("speedKpH "+speedKpHID);
     }
 
     private static void deshiferRMC(String[] array) {
+
         System.out.println("RMC -  Recommended Minimum Specific GNSS Data");
+
         System.out.println();
         System.out.println();
         System.out.println();
@@ -175,4 +206,19 @@ public class MessagesReader {
         }
         System.out.println();
     }
+
+    /**
+     * returns double or 0.0 if empty
+     */
+    private static double returnDouble(String s) {
+        return s.isEmpty() ? 0.0 : Double.parseDouble(s);
+    }
+
+    /**
+     * returns Integer or 0 if empty
+     */
+    private static int returnInteger(String s) {
+        return s.isEmpty() ? 0 : Integer.parseInt(s);
+    }
 }
+

@@ -18,31 +18,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+            <state relative-caret-position="453">
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#290#1444#1" />
+                <element signature="method#deshiferGSA#0;class#MessagesReader#0" />
                 <element signature="method#deshiferGGA#0;class#MessagesReader#0" />
-                <element signature="method#deshiferVTG#0;class#MessagesReader#0" />
                 <element signature="method#deshiferRMC#0;class#MessagesReader#0" />
                 <element signature="method#deshiferGLL#0;class#MessagesReader#0" />
                 <element signature="method#deshiferGSV#0;class#MessagesReader#0" />
                 <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
-                <marker date="1568719113619" expanded="true" signature="259:596" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/util/Date.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="257" selection-start-line="257" selection-end-line="257" />
-              <folding>
-                <element signature="e#10720#10721#0" expanded="true" />
-                <element signature="e#10750#10751#0" expanded="true" />
+                <element signature="method#showArray#0;class#MessagesReader#0" />
+                <element signature="docComment;method#returnDouble#0;class#MessagesReader#0" />
+                <element signature="docComment;method#returnInteger#0;class#MessagesReader#0" />
+                <marker date="1568723026666" expanded="true" signature="241:578" ph="..." />
               </folding>
             </state>
           </provider>
@@ -229,12 +219,12 @@
       <workItem from="1568150075668" duration="5743000" />
       <workItem from="1568282938191" duration="6118000" />
       <workItem from="1568620365526" duration="17168000" />
-      <workItem from="1568704054153" duration="8025000" />
+      <workItem from="1568704054153" duration="11417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25193000" />
+    <option name="totallyTimeSpent" value="28585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -249,7 +239,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23618636" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -378,8 +368,8 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="257" selection-start-line="257" selection-end-line="257" />
+        <state relative-caret-position="113">
+          <caret line="267" column="54" lean-forward="true" selection-start-line="267" selection-start-column="54" selection-end-line="267" selection-end-column="54" />
           <folding>
             <element signature="e#10720#10721#0" expanded="true" />
             <element signature="e#10750#10751#0" expanded="true" />
@@ -389,18 +379,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+        <state relative-caret-position="453">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#290#1444#1" />
+            <element signature="method#deshiferGSA#0;class#MessagesReader#0" />
             <element signature="method#deshiferGGA#0;class#MessagesReader#0" />
-            <element signature="method#deshiferVTG#0;class#MessagesReader#0" />
             <element signature="method#deshiferRMC#0;class#MessagesReader#0" />
             <element signature="method#deshiferGLL#0;class#MessagesReader#0" />
             <element signature="method#deshiferGSV#0;class#MessagesReader#0" />
             <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
-            <marker date="1568719113619" expanded="true" signature="259:596" ph="..." />
+            <element signature="method#showArray#0;class#MessagesReader#0" />
+            <element signature="docComment;method#returnDouble#0;class#MessagesReader#0" />
+            <element signature="docComment;method#returnInteger#0;class#MessagesReader#0" />
+            <marker date="1568723026666" expanded="true" signature="241:578" ph="..." />
           </folding>
         </state>
       </provider>

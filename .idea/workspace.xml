@@ -18,21 +18,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="159" selection-start-line="159" selection-end-line="159" />
+            <state relative-caret-position="403">
+              <caret line="235" column="27" selection-start-line="235" selection-start-column="27" selection-end-line="235" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#290#1444#1" />
                 <element signature="method#deshiferGSA#0;class#MessagesReader#0" />
                 <element signature="method#deshiferGGA#0;class#MessagesReader#0" />
+                <element signature="method#deshiferVTG#0;class#MessagesReader#0" />
                 <element signature="method#deshiferRMC#0;class#MessagesReader#0" />
                 <element signature="method#deshiferGLL#0;class#MessagesReader#0" />
-                <element signature="method#deshiferGSV#0;class#MessagesReader#0" />
                 <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
                 <element signature="method#showArray#0;class#MessagesReader#0" />
                 <element signature="docComment;method#returnDouble#0;class#MessagesReader#0" />
                 <element signature="docComment;method#returnInteger#0;class#MessagesReader#0" />
-                <marker date="1568723026666" expanded="true" signature="241:578" ph="..." />
+                <marker date="1568729929266" expanded="true" signature="325:595" ph="..." />
               </folding>
             </state>
           </provider>
@@ -219,12 +219,12 @@
       <workItem from="1568150075668" duration="5743000" />
       <workItem from="1568282938191" duration="6118000" />
       <workItem from="1568620365526" duration="17168000" />
-      <workItem from="1568704054153" duration="11417000" />
+      <workItem from="1568704054153" duration="15403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28585000" />
+    <option name="totallyTimeSpent" value="32571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -239,7 +239,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23618636" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19934994" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -379,21 +379,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tasks/MessagesReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        <state relative-caret-position="403">
+          <caret line="235" column="27" selection-start-line="235" selection-start-column="27" selection-end-line="235" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#290#1444#1" />
             <element signature="method#deshiferGSA#0;class#MessagesReader#0" />
             <element signature="method#deshiferGGA#0;class#MessagesReader#0" />
+            <element signature="method#deshiferVTG#0;class#MessagesReader#0" />
             <element signature="method#deshiferRMC#0;class#MessagesReader#0" />
             <element signature="method#deshiferGLL#0;class#MessagesReader#0" />
-            <element signature="method#deshiferGSV#0;class#MessagesReader#0" />
             <element signature="docComment;method#showArray#0;class#MessagesReader#0" />
             <element signature="method#showArray#0;class#MessagesReader#0" />
             <element signature="docComment;method#returnDouble#0;class#MessagesReader#0" />
             <element signature="docComment;method#returnInteger#0;class#MessagesReader#0" />
-            <marker date="1568723026666" expanded="true" signature="241:578" ph="..." />
+            <marker date="1568729929266" expanded="true" signature="325:595" ph="..." />
           </folding>
         </state>
       </provider>

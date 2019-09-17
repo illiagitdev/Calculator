@@ -6,11 +6,11 @@ import java.util.zip.Checksum;
 
 public class MessagesReader {
     public static void main(String[] args) {
-        String message = "$GPRMC,165110.000,A,5601.0318,N,01211.3503,E,0.09,28.11,190706,,*35";
+        String message = "$GPGSV,3,3,11,04,07,102,30,29,02,170,09,18,02,243,*42";
 
 //        $GPGSV,3,3,11,04,07,102,30,29,02,170,09,18,02,243,*42
-//        $GPGSV,3,3,11,04,07,102,30,29,02,170,09,18,02,243,*42
-//        $GPRMC,165110.000,A,5601.0318,N,01211.3503,E,0.09,28.11,190706,,*35
+//        $GPGLL,6012.5674,N,02449.6545,E,072022.000,A,A*50
+//        $GPRMC,114353.000,A,6016.3245,N,02458.3270,E,0.01,0.00,121009,,,A*69
 //        $GPVTG,45.67,T,,M,0.08,N,0.1,K*59
 //        $GPGGA,165114.000,5601.0318,N,01211.3504,E,1,07,1.2,22.6,M,41.6,M,,0000*62
 //        $GPGSA,A,3,05,17,22,09,14,04,30,,,,,,1.8,1.2,1.3*32
@@ -27,7 +27,8 @@ public class MessagesReader {
             String mesageType = head.substring(2);
             System.out.println(mesageType);
 
-            String[] array = message.substring(message.indexOf(",") + 1, message.indexOf("*")).split(",");
+            String[] array = message.substring(message.indexOf(",") + 1).split(",");
+            array[array.length - 1] = array[array.length - 1].substring(0, array[array.length - 1].length() - 3);//delete checksum
             showArray(array);
 
             switch (mesageType) {
@@ -90,7 +91,7 @@ public class MessagesReader {
                 "3 = 3D " + fixType);
 
         for (int i = 0; i < 12; i++) {
-            System.out.println("Satellite ID "+(i+1)+": "+satelliteID[i]);
+            System.out.println("Satellite ID " + (i + 1) + ": " + satelliteID[i]);
         }
 
         System.out.println("Position dilution of precision (00.0 to 99.9) " + PDOP);
@@ -137,64 +138,124 @@ public class MessagesReader {
     }
 
     private static void deshiferVTG(String[] array) {
-        double courseTrue =returnDouble(array[0]);
-        String courseTrueID=array[1];
-        double courseMagnetic=returnDouble(array[2]);
-        String courseMagneticID=array[3];
-        double speedKnots =returnDouble(array[4]);
-        String speedKnotsID=array[5];
-        double speedKpH =returnDouble(array[6]);
-        String speedKpHID=array[7];
+        double courseTrue = returnDouble(array[0]);
+        String courseTrueID = array[1];
+        double courseMagnetic = returnDouble(array[2]);
+        String courseMagneticID = array[3];
+        double speedKnots = returnDouble(array[4]);
+        String speedKnotsID = array[5];
+        double speedKpH = returnDouble(array[6]);
+        String speedKpHID = array[7];
 
 
         System.out.println("VTG - Course Over Ground and Ground Speed");
 
-        System.out.println("Course over ground, degrees True (000.0 ~ 359.9) "+courseTrue);
-        System.out.println("courseTrue "+courseTrueID);
-        System.out.println("Course over ground, degrees Magnetic (000.0 ~ 359.9) "+courseMagnetic);
-        System.out.println("courseMagnetic "+courseMagneticID);
-        System.out.println("Speed over ground in knots (000.0 ~ 999.9) "+speedKnots);
-        System.out.println("speedKnots "+speedKnotsID);
-        System.out.println("Speed over ground in kilometers per hour (0000.0 ~ 1800.0) "+speedKpH);
-        System.out.println("speedKpH "+speedKpHID);
+        System.out.println("Course over ground, degrees True (000.0 ~ 359.9) " + courseTrue);
+        System.out.println("courseTrue " + courseTrueID);
+        System.out.println("Course over ground, degrees Magnetic (000.0 ~ 359.9) " + courseMagnetic);
+        System.out.println("courseMagnetic " + courseMagneticID);
+        System.out.println("Speed over ground in knots (000.0 ~ 999.9) " + speedKnots);
+        System.out.println("speedKnots " + speedKnotsID);
+        System.out.println("Speed over ground in kilometers per hour (0000.0 ~ 1800.0) " + speedKpH);
+        System.out.println("speedKpH " + speedKpHID);
     }
 
     private static void deshiferRMC(String[] array) {
+        Date timeUTC = new Date((long) (returnDouble(array[0]) * 1000));
+        String statusIndicator =array[1];
+        double latitude=returnDouble(array[2]);
+        String direction=array[3];
+        double longitude=returnDouble(array[4]);
+        String directionEW=array[5];
+        double speedKnots=returnDouble(array[6]);
+        double heading=returnDouble(array[7]);
+        Date timeUTCfix = new Date((long) (returnDouble(array[8])));
+        double magneticVar=returnDouble(array[9]);
+        String letter=array[10];
+        String modeIndicator=array[11];
 
         System.out.println("RMC -  Recommended Minimum Specific GNSS Data");
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("UTC time of the fix. "+timeUTC);
+        System.out.println("Status indicator.\n" +
+                "A=valid; V=invalid "+statusIndicator);
+        System.out.println("Latitude coordinate. "+latitude);
+        System.out.println("Character denoting either N=North or S=South " +direction);
+        System.out.println("Longitude coordinate. "+longitude);
+        System.out.println("Character denoting either E=East or W=West "+directionEW);
+        System.out.println("Speed in knots "+speedKnots);
+        System.out.println("Heading "+heading);
+        System.out.println("UTC Date of the fix. "+timeUTCfix);
+        System.out.println("Magnetic variation in degrees, not supported "+magneticVar);
+        System.out.println("Letter denoting direction of magnetic variation. Either E=East or W=West. "+letter);
+        System.out.println("Mode indicator\n" +
+                "A=autonomous; N=data not valid "+modeIndicator);
     }
 
     private static void deshiferGLL(String[] array) {
+        double latitude = returnDouble(array[0]);
+        String denotionNS=array[1];
+        double longitude = returnDouble(array[2]);
+        String denotionEW=array[3];
+        Date timeUTC = new Date((long) (returnDouble(array[4]) * 1000));
+        String status=array[5];
+        String mode=array[6];
+
         System.out.println("GLL - Geographic Position – Latitude/Longitude");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+
+        System.out.println("Latitude coordinate. "+latitude);
+        System.out.println("Character denoting either N=North or S=South. "+denotionNS);
+        System.out.println("Longitude coordinate. "+longitude);
+        System.out.println("Character denoting either E=East or W=West "+denotionEW);
+        System.out.println("UTC time of the fix. "+timeUTC);
+        System.out.println("Status indicator.\n" +
+                "A=valid; V=invalid "+status);
+        System.out.println("Mode indicator.\n" +
+                "A=autonomous; N=data not valid "+mode);
     }
 
     private static void deshiferGSV(String[] array) {
+        int messagesN=returnInteger(array[0]);
+        int messageNumber=returnInteger(array[1]);
+        int satellites=returnInteger(array[2]);
+        int satellitID1=returnInteger(array[3]);
+        int satElevation1=returnInteger(array[4]);
+        int satAzimuth1=returnInteger(array[5]);
+        int SignalToNoise1=returnInteger(array[6]);
+
+        int satellitID2=returnInteger(array[7]);
+        int satElevation2=returnInteger(array[8]);
+        int satAzimuth2=returnInteger(array[9]);
+        int SignalToNoise2=returnInteger(array[10]);
+
+        int satellitID3=returnInteger(array[11]);
+        int satElevation3=returnInteger(array[12]);
+        int satAzimuth3=returnInteger(array[13]);
+        int SignalToNoise3=returnInteger(array[14]);
+
         System.out.println("GSV - GNSS DOP and Active Satellites");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+
+        System.out.println("Total number of messages, 1 to 9 "+messagesN);
+        System.out.println("Message number, 1 to 9 "+messageNumber);
+        System.out.println("Total number of satellites in view "+satellites);
+
+        System.out.println("Satellite ID (PRN) number "+satellitID1);
+        System.out.println("Satellite elevation, degrees 90 max "+satElevation1);
+        System.out.println("Satellite azimuth, degrees True, 000 to 359 "+satAzimuth1);
+        System.out.println("Signal-to-noise ration (C/No) 00-99 dB-Hz. Value of zero means that the satellite is predicted to\n" +
+                "be on the visible sky but it isn't being tracked. "+satellitID1);
+
+        System.out.println("Satellite ID (PRN) number "+satellitID2);
+        System.out.println("Satellite elevation, degrees 90 max "+satElevation2);
+        System.out.println("Satellite azimuth, degrees True, 000 to 359 "+satAzimuth2);
+        System.out.println("Signal-to-noise ration (C/No) 00-99 dB-Hz. Value of zero means that the satellite is predicted to\n" +
+                "be on the visible sky but it isn't being tracked. "+satellitID2);
+
+        System.out.println("Satellite ID (PRN) number "+satellitID3);
+        System.out.println("Satellite elevation, degrees 90 max "+satElevation3);
+        System.out.println("Satellite azimuth, degrees True, 000 to 359 "+satAzimuth3);
+        System.out.println("Signal-to-noise ration (C/No) 00-99 dB-Hz. Value of zero means that the satellite is predicted to\n" +
+                "be on the visible sky but it isn't being tracked. "+satellitID3);
     }
 
     /**

@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4f6bbb-9b55-4460-aa30-a050879e7779" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lesson5/First.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lesson5/Lesson5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lesson5/Second.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lesson5/custom/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/MessagesReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/MessagesReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/SheikSotr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/SheikSotr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson5/Lesson5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson5/Lesson5.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java14Homework/NMEAmessage" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -157,6 +151,8 @@
       <workItem from="1568704054153" duration="16704000" />
       <workItem from="1568735885151" duration="684000" />
       <workItem from="1568737573532" duration="7649000" />
+      <workItem from="1568758734306" duration="359000" />
+      <workItem from="1568762493680" duration="458000" />
     </task>
     <servers />
   </component>

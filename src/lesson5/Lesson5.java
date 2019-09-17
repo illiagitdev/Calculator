@@ -23,7 +23,7 @@ public class Lesson5 {
     }
 
     static int factorial(int value) {
-        return value * value==0?1:factorial(value - 1);//todo: fix it
+        return value *= (value == 0 ? 1 : factorial(value - 1));//todo: fix it
     }
 
     public static void add(int a, int b) {

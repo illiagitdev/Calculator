@@ -18,12 +18,30 @@ public class Lesson5 {
 //
 //        Utils utils=new Utils();
 //        utils.showPublic();
+        int n = 7, res = n;
 
-        System.out.println(factorial(5));
+        while (n > 1) {
+            res *= (n - 1);
+            n--;
+        }
+        System.out.println("n! " + res);
+
+        n = 7;
+        System.out.println("factorial(n) " + factorial(n));
+
+        System.out.println("factorialIf(n) " + factorialIf(n));
+
     }
 
     static int factorial(int value) {
-        return value *= (value == 0 ? 1 : factorial(value - 1));//todo: fix it
+        return (value == 0) ? 1 : value*factorial(value - 1);
+    }
+
+    static int factorialIf(int value) {
+        if(value==0){
+            return 1;
+        }else
+            return value*factorialIf(value-1);
     }
 
     public static void add(int a, int b) {

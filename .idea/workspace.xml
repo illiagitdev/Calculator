@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4f6bbb-9b55-4460-aa30-a050879e7779" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/files.data.points/points.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files.data.points/points1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/math_vectors/ReadPointsTxt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/PracticeExemples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/PracticeExemples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/Median.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/Median.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,19 +20,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/PracticeExemples.java">
+        <entry file="file://$PROJECT_DIR$/src/lesson6/Median.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+            <state relative-caret-position="280">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
-                <element signature="method#main#0;class#PracticeExemples#0" />
-                <element signature="method#SwapString#0;class#PracticeExemples#0" />
-                <element signature="method#powLnExp#0;class#PracticeExemples#0" />
-                <element signature="method#arrayMean#0;class#PracticeExemples#0" />
-                <element signature="method#showArray#0;class#PracticeExemples#0" />
-                <element signature="method#fillArrayInt#0;class#PracticeExemples#0" />
-                <element signature="e#3130#3131#0" expanded="true" />
+                <element signature="method#arrayMedian#0;class#Median#0" />
+                <element signature="method#showArray#0;class#Median#0" />
+                <element signature="method#fillArrayInt#0;class#Median#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/math_vectors/ReadPointsTxt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -53,6 +61,10 @@
         <option value="$PROJECT_DIR$/src/lesson5/hometask/Practice.java" />
         <option value="$PROJECT_DIR$/src/math_vectors/Point3D.java" />
         <option value="$PROJECT_DIR$/src/lesson6/PracticeExemples.java" />
+        <option value="$PROJECT_DIR$/src/math_vectors/ReadPointsTxt.java" />
+        <option value="$PROJECT_DIR$/files.data.points/points.txt" />
+        <option value="$PROJECT_DIR$/files.data.points/points1.txt" />
+        <option value="$PROJECT_DIR$/src/lesson6/Median.java" />
       </list>
     </option>
   </component>
@@ -138,7 +150,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PracticeExemples">
+  <component name="RunManager" selected="Application.Median">
     <configuration name="Lesson5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lesson5.Lesson5" />
       <module name="Calculator" />
@@ -146,12 +158,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MessagesReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tasks.MessagesReader" />
+    <configuration name="Median" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson6.Median" />
       <module name="Calculator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tasks.*" />
+          <option name="PATTERN" value="lesson6.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -200,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Median" />
         <item itemvalue="Application.PracticeExemples" />
         <item itemvalue="Application.Practice" />
         <item itemvalue="Application.Lesson5" />
         <item itemvalue="Application.SheikSotr" />
-        <item itemvalue="Application.MessagesReader" />
       </list>
     </recent_temporary>
   </component>
@@ -247,12 +259,12 @@
       <workItem from="1568982321476" duration="4916000" />
       <workItem from="1569224648330" duration="26000" />
       <workItem from="1569394250868" duration="8130000" />
-      <workItem from="1569407805141" duration="2548000" />
+      <workItem from="1569407805141" duration="5762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18036000" />
+    <option name="totallyTimeSpent" value="21250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -416,16 +428,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/PracticeExemples.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+        <state relative-caret-position="187">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
           <folding>
-            <element signature="method#main#0;class#PracticeExemples#0" />
             <element signature="method#SwapString#0;class#PracticeExemples#0" />
             <element signature="method#powLnExp#0;class#PracticeExemples#0" />
             <element signature="method#arrayMean#0;class#PracticeExemples#0" />
             <element signature="method#showArray#0;class#PracticeExemples#0" />
             <element signature="method#fillArrayInt#0;class#PracticeExemples#0" />
-            <element signature="e#3130#3131#0" expanded="true" />
+            <element signature="e#2301#2302#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files.data.points/points.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files.data.points/points1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/math_vectors/ReadPointsTxt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/Median.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="method#arrayMedian#0;class#Median#0" />
+            <element signature="method#showArray#0;class#Median#0" />
+            <element signature="method#fillArrayInt#0;class#Median#0" />
           </folding>
         </state>
       </provider>

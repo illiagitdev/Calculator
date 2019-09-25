@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4f6bbb-9b55-4460-aa30-a050879e7779" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/files.data.points/points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files.data.points/points1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/math_vectors/ReadPointsTxt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lesson6/Mode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/Median.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/Median.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/META-INF/Calculator.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator/META-INF/Calculator.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/Median.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,12 +19,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/Median.java">
+        <entry file="file://$PROJECT_DIR$/src/lesson6/Mode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="306">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
-                <element signature="method#arrayMedian#0;class#Median#0" />
+                <element signature="method#shakerSort#0;class#Median#0" />
+                <element signature="method#arrayMode#0;class#Mode#0" />
                 <element signature="method#showArray#0;class#Median#0" />
                 <element signature="method#fillArrayInt#0;class#Median#0" />
               </folding>
@@ -65,6 +65,7 @@
         <option value="$PROJECT_DIR$/files.data.points/points.txt" />
         <option value="$PROJECT_DIR$/files.data.points/points1.txt" />
         <option value="$PROJECT_DIR$/src/lesson6/Median.java" />
+        <option value="$PROJECT_DIR$/src/lesson6/Mode.java" />
       </list>
     </option>
   </component>
@@ -150,7 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Median">
+  <component name="RunManager" selected="Application.Mode">
     <configuration name="Lesson5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lesson5.Lesson5" />
       <module name="Calculator" />
@@ -158,8 +159,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Median" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lesson6.Median" />
+    <configuration name="Mode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson6.Mode" />
       <module name="Calculator" />
       <extension name="coverage">
         <pattern>
@@ -212,7 +213,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Median" />
+        <item itemvalue="Application.Mode" />
         <item itemvalue="Application.PracticeExemples" />
         <item itemvalue="Application.Practice" />
         <item itemvalue="Application.Lesson5" />
@@ -259,12 +260,12 @@
       <workItem from="1568982321476" duration="4916000" />
       <workItem from="1569224648330" duration="26000" />
       <workItem from="1569394250868" duration="8130000" />
-      <workItem from="1569407805141" duration="5762000" />
+      <workItem from="1569407805141" duration="6744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21250000" />
+    <option name="totallyTimeSpent" value="22232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -278,7 +279,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -462,12 +463,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/Median.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson6/Mode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="306">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <element signature="method#arrayMedian#0;class#Median#0" />
+            <element signature="method#shakerSort#0;class#Median#0" />
+            <element signature="method#arrayMode#0;class#Mode#0" />
             <element signature="method#showArray#0;class#Median#0" />
             <element signature="method#fillArrayInt#0;class#Median#0" />
           </folding>

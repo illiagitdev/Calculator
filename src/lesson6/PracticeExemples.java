@@ -51,7 +51,7 @@ public class PracticeExemples {
         int x = scanInt();
         System.out.print("enter power ");
         int n = scanInt();
-        int result = (int) Math.ceil(Math.exp(n * Math.log(x)));
+        int result = (int) Math.round(Math.exp(n * Math.log(x)));
         System.out.println("Math.pow(x,n) " + Math.pow(x, n));
         System.out.println("(int) Math.exp(n*Math.log(x) " + result);
         System.out.println("Math.exp(n*Math.log(x) " + Math.exp(n * Math.log(x)));

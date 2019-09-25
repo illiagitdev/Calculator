@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4f6bbb-9b55-4460-aa30-a050879e7779" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lesson6/PracticeExemples.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/PracticeExemples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/PracticeExemples.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,55 +16,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson5/Lesson5.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-              <folding>
-                <element signature="e#112#142#0" />
-                <element signature="e#904#905#0" expanded="true" />
-                <element signature="e#972#973#0" expanded="true" />
-                <element signature="e#1168#1169#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson5/hometask/Practice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-              <folding>
-                <element signature="docComment;method#showDown#0;class#Practice#0" />
-                <element signature="docComment;method#powerOfX#0;class#Practice#0" />
-                <element signature="e#2112#2113#0" expanded="true" />
-                <element signature="e#2188#2189#0" expanded="true" />
-                <element signature="docComment;method#returnMaxVal#0;class#Practice#0" />
-                <element signature="e#2290#2291#0" expanded="true" />
-                <element signature="e#2345#2346#0" expanded="true" />
-                <element signature="docComment;method#showArray#0;class#Practice#0" />
-                <element signature="method#showArray#0;class#Practice#0" />
-                <element signature="docComment;method#fillArray#0;class#Practice#0" />
-                <element signature="method#fillArray#0;class#Practice#0" />
-                <element signature="docComment;method#getIntValue#0;class#Practice#0" />
-                <element signature="method#getIntValue#0;class#Practice#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lesson6/PracticeExemples.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+            <state relative-caret-position="436">
+              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
               <folding>
+                <element signature="method#main#0;class#PracticeExemples#0" />
+                <element signature="method#SwapString#0;class#PracticeExemples#0" />
+                <element signature="method#powLnExp#0;class#PracticeExemples#0" />
                 <element signature="method#arrayMean#0;class#PracticeExemples#0" />
                 <element signature="method#showArray#0;class#PracticeExemples#0" />
                 <element signature="method#fillArrayInt#0;class#PracticeExemples#0" />
+                <element signature="e#3130#3131#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,6 +51,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/lesson5/Lesson5.java" />
         <option value="$PROJECT_DIR$/src/lesson5/hometask/Practice.java" />
+        <option value="$PROJECT_DIR$/src/math_vectors/Point3D.java" />
         <option value="$PROJECT_DIR$/src/lesson6/PracticeExemples.java" />
       </list>
     </option>
@@ -104,7 +69,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,13 +105,13 @@
               <item name="Calculator" type="b2602c69:ProjectViewProjectNode" />
               <item name="Calculator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="math_vectors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,18 +246,19 @@
       <workItem from="1568967597948" duration="83000" />
       <workItem from="1568982321476" duration="4916000" />
       <workItem from="1569224648330" duration="26000" />
-      <workItem from="1569394250868" duration="5639000" />
+      <workItem from="1569394250868" duration="8130000" />
+      <workItem from="1569407805141" duration="2548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12997000" />
+    <option name="totallyTimeSpent" value="18036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09221748" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09328358" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -405,17 +371,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson5/Lesson5.java">
+    <entry file="file://$PROJECT_DIR$/src/math_vectors/Point3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="e#112#142#0" />
-            <element signature="e#904#905#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1168#1169#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -441,14 +400,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson5/Lesson5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding>
+            <element signature="e#112#142#0" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/PracticeExemples.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        <state relative-caret-position="436">
+          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
           <folding>
+            <element signature="method#main#0;class#PracticeExemples#0" />
+            <element signature="method#SwapString#0;class#PracticeExemples#0" />
+            <element signature="method#powLnExp#0;class#PracticeExemples#0" />
             <element signature="method#arrayMean#0;class#PracticeExemples#0" />
             <element signature="method#showArray#0;class#PracticeExemples#0" />
             <element signature="method#fillArrayInt#0;class#PracticeExemples#0" />
+            <element signature="e#3130#3131#0" expanded="true" />
           </folding>
         </state>
       </provider>

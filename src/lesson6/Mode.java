@@ -3,7 +3,7 @@ package lesson6;
 public class Mode {
     public static void main(String[] args) {
         System.out.println("\n");
-        int[] arr1 = new int[15];
+        int[] arr1 = new int[50];
         fillArrayInt(arr1);
         showArray(arr1);
 
@@ -21,20 +21,47 @@ public class Mode {
         System.out.println("Number of different values: "+size);
         int[] uniqueArray = new int[size];
         int[] uniqueCounter =new int[size];
-        int unique =separator(arr1,uniqueArray,uniqueCounter);
+        separator(arr1,uniqueArray,uniqueCounter);
         showArray(uniqueArray);
+        System.out.println();
         showArray(uniqueCounter);
 
+        //getting MEAN or MEANS
+        System.out.println();
+        showMeamX(uniqueArray,uniqueCounter);
 
         System.out.println();
-        showDifferent(arr1);
+        //showDifferent(arr1);
+    }
+
+    private static void showMeamX(int[] uniqueArray, int[] uniqueCounter) {
+        int repaetsValue = getRepeatsID(uniqueCounter);
+        getRepeats(uniqueArray,uniqueCounter,repaetsValue);
+    }
+
+    private static void getRepeats(int[] uniqueArray, int[] uniqueCounter, int repaetsValue) {
+        for (int i=0;i<uniqueArray.length;i++) {
+            if(repaetsValue==uniqueCounter[i]){
+                System.out.println("Mode "+uniqueArray[i]+" frequency - "+repaetsValue);
+            }
+        }
+    }
+
+    private static int getRepeatsID(int[] uniqueCounter) {
+        int max=0;
+        for (int value : uniqueCounter) {
+            if (value > max) {
+                max = value;
+            }
+        }
+        return max;
     }
 
     /**
      * поверта два масиви: з унікальними елементами та з числом повторів цих елементів,
-     * на входатри масиви - базовий +2 і число яке вказує кількість унікальних елементів
+     * на входатри масиви - базовий +2
      */
-    private static int separator(int[] array, int[] uniqueArray, int[] uniqueCounter) {
+    private static void separator(int[] array, int[] uniqueArray, int[] uniqueCounter) {
         int counter = 1;
         int k=0;
         uniqueArray[k]=array[0];
@@ -42,10 +69,8 @@ public class Mode {
             if (i == (array.length - 2)) {
                 System.out.println("Element " + array[array.length - 1] + " counts: " + counter);
             }
-
             if (array[i + 1] == array[i]) {
                 counter++;
-                continue;
             } else {
                 uniqueCounter[k]=counter;
                 uniqueArray[++k]=array[i+1];
@@ -54,7 +79,7 @@ public class Mode {
             }
 
         }
-        return 0;
+        uniqueCounter[uniqueCounter.length-1]=counter;
     }
 
     /**

@@ -1,21 +1,19 @@
 package math_vectors;
 
-import java.util.Objects;
-
 public class VectorNew {
-    private int x;
-    private int y;
-    private int z;
+    private double x;
+    private double y;
+    private double z;
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public int getZ() {
+    public double getZ() {
         return z;
     }
 
@@ -26,7 +24,7 @@ public class VectorNew {
      * @param y
      * @param z
      */
-    public VectorNew(int x, int y, int z) {
+    public VectorNew(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -36,7 +34,7 @@ public class VectorNew {
      * Creates zero-vector
      */
     public VectorNew() {
-        this(0, 0, 0);
+        this(0.0, 0.0, 0.0);
     }
 
     /**
@@ -53,6 +51,7 @@ public class VectorNew {
 
     /**
      * Returns vector: sum of two vectors
+     *
      * @param a
      * @param b
      * @return
@@ -62,24 +61,61 @@ public class VectorNew {
     }
 
     /**
-     * Returns dot multiplication on vector
+     * Returns dot multiplication of scalar on vector
+     *
      * @param a
      * @param value
      * @return
      */
-    public VectorNew dotByValue(VectorNew a, int value){
-        return new VectorNew(a.x*value,a.y*value,a.z*value);
+    public VectorNew dotByValue(VectorNew a, double value) {
+        return new VectorNew(a.x * value, a.y * value, a.z * value);
     }
 
     /**
      * Returns length of the vector
+     *
      * @param a
      * @return
      */
-    public int length(VectorNew a){
-
+    public double length(VectorNew a) {
+        return Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
     }
 
+    /**
+     * Returns unit vector of the vector
+     *
+     * @param a
+     * @return
+     */
+    public VectorNew unitVector(VectorNew a) {
+        double module = length(a);
+        return new VectorNew(a.x / module, a.y / module, a.z / module);
+    }
+
+    /**
+     * Returns scalar product
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public double dotProduct(VectorNew a, VectorNew b) {
+        return a.x * b.x + a.y * b.y + a.z * b.z;
+    }
+
+    /**
+     * Returns Vector of vector product
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public VectorNew crossProduct(VectorNew a, VectorNew b) {
+        double x = a.y * b.z - a.z * b.y;
+        double y = -(a.x * b.z - a.z * b.x);
+        double z = a.x * b.y - a.y * b.x;
+        return new VectorNew(x, y, z);
+    }
 
     @Override
     public String toString() {

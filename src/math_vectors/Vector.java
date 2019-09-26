@@ -10,7 +10,7 @@ public class Vector {
     }
 
     public Vector() {
-        this(new Point3D(), new Point3D(1, 0, 0));
+        this(1, 0, 0);
     }
 
     public Vector(int x, int y, int z) {

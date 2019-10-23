@@ -1,4 +1,7 @@
 package lesson11_12;
 
-public interface ElectricityConsumer {
+interface ElectricityConsumer {
+    public void electricityOn();
+    public void electricityOff();
+    public String getTitle();
 }

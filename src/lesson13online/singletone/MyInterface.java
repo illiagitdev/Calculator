@@ -1,4 +1,4 @@
 package lesson13online.singletone;
 
-public interface ЬнШтеукафсу {
+public interface MyInterface {
 }

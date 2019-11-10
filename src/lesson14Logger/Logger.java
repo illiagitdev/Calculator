@@ -44,19 +44,21 @@ public enum Logger {
         LogType[] types = LogType.values();
         Date currentDate = new Date();
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-        String datStr = format.format(currentDate);
+        String dateStr = format.format(currentDate);
+        File path=new File("log/"+dateStr+"/");
         logFiles = new File[types.length + 1];
         for (int i = 0; i < logFiles.length - 1; i++) {
-            logFiles[i] = new File(types[i] + "_" + datStr + "_log.log");
-            if (!logFiles[i].exists()) {
+            logFiles[i] = new File("log/"+dateStr+"/" + types[i] + "_" + "_log.log");
+            if (!path.isDirectory()&&!logFiles[i].exists()) {
                 try {
+                    path.mkdirs();
                     logFiles[i].createNewFile();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
-        logFiles[logFiles.length - 1] = new File("all_" + datStr + "_log.log");
+        logFiles[logFiles.length - 1] = new File("log/"+dateStr+"/"+"all_"  + "_log.log");
         if (!logFiles[logFiles.length - 1].exists()) {
             try {
                 logFiles[logFiles.length - 1].createNewFile();

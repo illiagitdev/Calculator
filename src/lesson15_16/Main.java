@@ -14,9 +14,9 @@ public class Main {
         container.setItem(new Camera());
         Product product = container.getItem();
 
-        //isExist(new ArrayList<Phone>(), new Camera());
+//        isExist(new ArrayList<Phone>(), new Camera());
         listCopy(new ArrayList<Phone>(), new ArrayList<Object>());
-        //new Camera().compareTo()
+//        new Camera().compareTo()
 
 
 

@@ -1,7 +1,5 @@
 package lesson15_16.o9_collections_generics;
 
-import java.util.Collection;
-
 public class Main {
     public static void main(String[] args) {
         Operational student = new Operational ();
@@ -43,10 +41,4 @@ HashSet
 Подсказка:
 System.currentTimeMillis() - этот метод возвращает текущее время в миллисекундах
     * */
-
-    static void printCollection(Collection collection) {
-        for (Object element : collection)
-            System.out.print("" + element + " ");
-        System.out.println();
-    }
 }

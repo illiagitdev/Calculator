@@ -19,4 +19,12 @@ public class Student {
     public int getCourse() {
         return course;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", course=" + course +
+                '}';
+    }
 }

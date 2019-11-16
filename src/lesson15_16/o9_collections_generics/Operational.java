@@ -51,6 +51,34 @@ public class Operational {
         printCollection(res);
     }
 
+    public void runTester(int count){
+        List<Integer> array = new ArrayList<>();
+        List<Integer> linkedArray = new LinkedList<>();
+        Set<Integer> setList = new TreeSet<>();
+        Set<Integer> setHesh = new HashSet<>();
+        PerformanceChecker tester=new PerformanceChecker();
+
+        System.out.println("Test with count "+count);
+        System.out.println("\n\nResult time for adding: ");
+        System.out.println("Test for ArrayList "+tester.checkAdding(array,count));
+        System.out.println("Test for LinkedList "+tester.checkAdding(array,count));
+        System.out.println("Test for TreeSet "+tester.checkAdding(array,count));
+        System.out.println("Test for HashSet "+tester.checkAdding(array,count));
+
+        System.out.println("\n\nResult time for reading: ");
+        System.out.println("Test for ArrayList "+tester.checkReading(array,count));
+        System.out.println("Test for LinkedList "+tester.checkReading(array,count));
+        System.out.println("Test for TreeSet "+tester.checkReading(array,count));
+        System.out.println("Test for HashSet "+tester.checkReading(array,count));
+
+        System.out.println("\n\nResult time for removing: ");
+        System.out.println("Test for ArrayList "+tester.checkRemoving(array,count));
+        System.out.println("Test for LinkedList "+tester.checkRemoving(array,count));
+        System.out.println("Test for TreeSet "+tester.checkRemoving(array,count));
+        System.out.println("Test for HashSet "+tester.checkRemoving(array,count));
+
+    }
+
     public static Set<Student> union(Set<Student> set1, Set<Student> set2) {
         Set<Student> set = new HashSet<Student>();
         set.addAll(set1);

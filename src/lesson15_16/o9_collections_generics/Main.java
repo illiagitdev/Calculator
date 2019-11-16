@@ -5,11 +5,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Operational student = new Operational ();
-        student.run();
+//        student.run();
 
-
-        List<Integer> array = new ArrayList<>();
-        List<Integer> linkedArray = new LinkedList<>();
-        Set<Integer> setList = new TreeSet<>();
-        Set<Integer> setHesh = new HashSet<>();    }
+        student.runTester(6000);
+    }
 }

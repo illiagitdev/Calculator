@@ -3,6 +3,12 @@ package lesson15_16.o9_collections_generics;
 import java.util.*;
 
 public class PerformanceChecker {
+    private int number=12;
+
+    public int getNumber() {
+        return number;
+    }
+
     public long checkAdding(Collection collection, int count) {
         long start = System.currentTimeMillis();
         for (int i = 0; i < count; i++) {

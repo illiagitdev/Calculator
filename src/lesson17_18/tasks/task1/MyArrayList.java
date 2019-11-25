@@ -1,29 +1,64 @@
 package lesson17_18.tasks.task1;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
-public class MyArrayLiat<T> implements List<T> {
-    T[] list;
-    /*
-        * Задание 1 - ArrayList
-    Написать свой класс MyArrayList как аналог классу ArrayList.
-    Методы
-    add(T value) добавляет элемент в конец
+public class MyArrayList<T> implements List<T> {
+    private T[] list;
+    private static int sizeL = 0;
+private Class tClass;
 
-    remove(int index) удаляет элемент под индексом
+    public MyArrayList(Class<T> tClass, int size) {
+        this.tClass=tClass;
+        list =(T[]) Array.newInstance(tClass, size);
+    }
 
-    clear() очищает коллекцию
+    public MyArrayList(Class<T> tClass) {
+        this.tClass=tClass;
+        list =(T[]) Array.newInstance(tClass, 10);
+    }
 
-    size() возвращает размер коллекции
+    @Override
+    public boolean add(T t) {
+        if (sizeL == list.length) {
+            resize();
+        }
+            list[sizeL++] = t;
+            return true;
+    }
 
-    get(int index) возвращает элемент под индексом*/
-    public MyArrayLiat(T[] list) {
-        this.list = list;
+    private void resize(){
+        T[] zlist =(T[]) Array.newInstance(tClass, (int) (sizeL*1.5+1));
+        System.arraycopy(list, 0, list, 0, sizeL - 1);
+    }
+
+    @Override
+    public T remove(int index) {
+        T removed = list[index];
+        T[] nelList;
+        System.arraycopy(list, index, list, index - 1, sizeL - index - 1);
+        list[sizeL--] = null;
+        return removed;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public T get(int index) {
+        return list[index];
     }
 
     @Override
     public int size() {
         return 0;
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        return false;
     }
 
     @Override
@@ -52,16 +87,6 @@ public class MyArrayLiat<T> implements List<T> {
     }
 
     @Override
-    public boolean add(T t) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Object o) {
-        return false;
-    }
-
-    @Override
     public boolean containsAll(Collection<?> c) {
         return false;
     }
@@ -87,16 +112,6 @@ public class MyArrayLiat<T> implements List<T> {
     }
 
     @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public T get(int index) {
-        return null;
-    }
-
-    @Override
     public T set(int index, T element) {
         return null;
     }
@@ -104,11 +119,6 @@ public class MyArrayLiat<T> implements List<T> {
     @Override
     public void add(int index, T element) {
 
-    }
-
-    @Override
-    public T remove(int index) {
-        return null;
     }
 
     @Override

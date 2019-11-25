@@ -1,4 +1,6 @@
 package lesson17_18;
 
-public class Numbers {
+public abstract class Numbers {
+    private int i;
+
 }

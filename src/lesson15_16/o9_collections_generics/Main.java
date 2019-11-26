@@ -4,6 +4,7 @@ import java.awt.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,6 +43,11 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println("2-number = "+test.getNumber());
+
+        List<Integer> ints=new ArrayList<>();
+        List<String> strs=new ArrayList<>();
+        assert ints.getClass()==strs.getClass();
+        assert ints.getClass()==ArrayList.class;
 
     }
 }

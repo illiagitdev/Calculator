@@ -1,19 +1,19 @@
 package math_vectors;
 
-public class VectorNew {
-    private double x;
-    private double y;
-    private double z;
+public class VectorNew<T> {
+    private T x;
+    private T y;
+    private T z;
 
-    public double getX() {
+    public T getX() {
         return x;
     }
 
-    public double getY() {
+    public T getY() {
         return y;
     }
 
-    public double getZ() {
+    public T getZ() {
         return z;
     }
 
@@ -24,7 +24,7 @@ public class VectorNew {
      * @param y
      * @param z
      */
-    public VectorNew(double x, double y, double z) {
+    public VectorNew(T x, T y, T z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -33,89 +33,38 @@ public class VectorNew {
     /**
      * Creates zero-vector
      */
-    public VectorNew() {
-        this(0.0, 0.0, 0.0);
-    }
+    public VectorNew() {}
 
-    /**
-     * Creates vector based on start and end points
-     *
-     * @param a
-     * @param b
-     */
-    public VectorNew(Point3D a, Point3D b) {
-        x = b.getX() - a.getX();
-        y = b.getY() - a.getY();
-        z = b.getZ() - a.getZ();
-    }
-
-    /**
-     * Returns vector: sum of two vectors
-     *
-     * @param a
-     * @param b
-     * @return
-     */
-    public VectorNew addVectors(VectorNew a, VectorNew b) {
-        return new VectorNew(a.x + b.x, a.y + b.y, a.z + b.z);
-    }
-
-    /**
-     * Returns dot multiplication of scalar on vector
-     *
-     * @param a
-     * @param value
-     * @return
-     */
-    public VectorNew dotByValue(VectorNew a, double value) {
-        return new VectorNew(a.x * value, a.y * value, a.z * value);
-    }
-
-    /**
-     * Returns length of the vector
-     *
-     * @param a
-     * @return
-     */
-    public double length(VectorNew a) {
-        return Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
-    }
-
-    /**
-     * Returns unit vector of the vector
-     *
-     * @param a
-     * @return
-     */
-    public VectorNew unitVector(VectorNew a) {
-        double module = length(a);
-        return new VectorNew(a.x / module, a.y / module, a.z / module);
-    }
-
-    /**
-     * Returns scalar product
-     *
-     * @param a
-     * @param b
-     * @return
-     */
-    public double dotProduct(VectorNew a, VectorNew b) {
-        return a.x * b.x + a.y * b.y + a.z * b.z;
-    }
-
-    /**
-     * Returns Vector of vector product
-     *
-     * @param a
-     * @param b
-     * @return
-     */
-    public VectorNew crossProduct(VectorNew a, VectorNew b) {
-        double x = a.y * b.z - a.z * b.y;
-        double y = -(a.x * b.z - a.z * b.x);
-        double z = a.x * b.y - a.y * b.x;
-        return new VectorNew(x, y, z);
-    }
+//    public VectorNew<T> addVectors(VectorNew<T> a, VectorNew<T> b) {
+//        return new VectorNew<T>(a.x + b.x, a.y + b.y, a.z + b.z);
+//    }
+//
+//    public VectorNew<T> dotByValue(VectorNew<T> a, double value) {
+//        return new VectorNew<T>((T)a.x * value, a.y * value, a.z * value);
+//    }
+//
+//    public double length(VectorNew<T> a) {
+//        return Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
+//    }
+//
+//    /**
+//     * Returns unit vector of the vector
+//     */
+//    public VectorNew<T> unitVector(VectorNew<T> a) {
+//        double module = length(a);
+//        return new VectorNew<T>(a.x / module, a.y / module, a.z / module);
+//    }
+//
+//    public T dotProduct(VectorNew<T> a, VectorNew<T> b) {
+//        return a.x * b.x + a.y * b.y + a.z * b.z;
+//    }
+//
+//    public VectorNew<T> crossProduct(VectorNew<T> a, VectorNew<T> b) {
+//        T x = a.y * b.z - a.z * b.y;
+//        T y = -(a.x * b.z - a.z * b.x);
+//        T z = a.x * b.y - a.y * b.x;
+//        return new VectorNew<T>(x, y, z);
+//    }
 
     @Override
     public String toString() {

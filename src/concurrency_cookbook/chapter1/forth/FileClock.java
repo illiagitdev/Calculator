@@ -1,4 +1,4 @@
-package concurrency_cookbook.forth;
+package concurrency_cookbook.chapter1.forth;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;

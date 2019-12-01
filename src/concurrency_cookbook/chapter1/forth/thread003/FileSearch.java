@@ -1,4 +1,4 @@
-package concurrency_cookbook.thread003;
+package concurrency_cookbook.chapter1.forth.thread003;
 
 import java.io.File;
 

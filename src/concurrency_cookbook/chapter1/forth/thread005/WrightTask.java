@@ -1,4 +1,4 @@
-package concurrency_cookbook.thread005;
+package concurrency_cookbook.chapter1.forth.thread005;
 
 import java.util.Date;
 import java.util.Deque;

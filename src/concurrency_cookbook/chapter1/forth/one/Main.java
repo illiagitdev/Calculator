@@ -1,4 +1,4 @@
-package concurrency_cookbook.one;
+package concurrency_cookbook.chapter1.forth.one;
 
 import java.io.File;
 import java.io.FileWriter;

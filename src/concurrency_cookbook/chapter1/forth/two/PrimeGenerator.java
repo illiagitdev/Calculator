@@ -1,4 +1,4 @@
-package concurrency_cookbook.two;
+package concurrency_cookbook.chapter1.forth.two;
 
 public class PrimeGenerator extends Thread {
     @Override

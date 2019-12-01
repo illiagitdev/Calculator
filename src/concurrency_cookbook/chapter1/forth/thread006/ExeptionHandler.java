@@ -1,4 +1,4 @@
-package concurrency_cookbook.thread005;
+package concurrency_cookbook.chapter1.forth.thread006;
 
 public class ExeptionHandler implements Thread.UncaughtExceptionHandler {
     @Override

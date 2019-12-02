@@ -24,41 +24,41 @@ public class Main {
             System.out.println("Hello " + threadName);
         };
 
-        Callable<Integer> task2 =()->{
-            try {
-                TimeUnit.SECONDS.sleep(1);
-                return 123;
-            }catch (InterruptedException e){
-                //throw new  InterruptedException("interrupted exeption", e.printStackTrace());
-                e.printStackTrace();
-            }
-        };
+//        Callable<Integer> task2 =()->{
+//            try {
+//                TimeUnit.SECONDS.sleep(1);
+//                return 123;
+//            }catch (InterruptedException e){
+//                //throw new  InterruptedException("interrupted exeption", e.printStackTrace());
+//                e.printStackTrace();
+//            }
+//        };
 
 //        Thread thread=new Thread(task);
 //        thread.start();
 
-        ExecutorService service = Executors.newSingleThreadExecutor();
-        service.submit(task);
-        Future<>
-        try {
-            System.out.println("try too shutdown");
-            service.shutdown();
-            service.awaitTermination(5, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }finally {
-            if (!service.isTerminated()){
-                System.err.println("cancel non-finished task");
-            }
-            service.shutdownNow();
-            System.out.println("forsed shutdown now");
-        }
-
-        System.out.println("Done!");
+//        ExecutorService service = Executors.newSingleThreadExecutor();
+//        service.submit(task);
+//        Future<>
+//        try {
+//            System.out.println("try too shutdown");
+//            service.shutdown();
+//            service.awaitTermination(5, TimeUnit.SECONDS);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }finally {
+//            if (!service.isTerminated()){
+//                System.err.println("cancel non-finished task");
+//            }
+//            service.shutdownNow();
+//            System.out.println("forsed shutdown now");
+//        }
+//
+//        System.out.println("Done!");
     }
 
 
-    public static void copyList(List<? extends Person> src, List<? super Person> dst) {
-        dst.addAll(src);
-    }
+//    public static void copyList(List<? extends Person> src, List<? super Person> dst) {
+//        dst.addAll(src);
+//    }
 }

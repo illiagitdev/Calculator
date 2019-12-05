@@ -7,7 +7,6 @@ import static threadExamples.Utils.sleep;
 public class Sample4_Daemons {
 
     static class MyRunnable implements Runnable {
-
         private String message;
         private int count;
 

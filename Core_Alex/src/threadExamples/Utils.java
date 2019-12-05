@@ -8,7 +8,7 @@ public class Utils {
         System.out.printf("%s\n", str);
     }
 
-    public static void sleep(int sleep){
+    public static void sleep(long sleep){
         try {
             TimeUnit.SECONDS.sleep(sleep);
         } catch (InterruptedException e) {
@@ -16,7 +16,7 @@ public class Utils {
         }
     }
 
-    public static void sleepRandom(int sleep){
+    public static void sleepRandom(long sleep){
         Random random=new Random();
         try {
             TimeUnit.SECONDS.sleep(random.nextInt()*sleep);

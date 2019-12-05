@@ -27,7 +27,7 @@ A/C:
 A/C - acceptance criteria. Критерия приема кажддой задачи.
 
 //todo: google
-1 - PermGen - Metaspace
-2 - динамическое связывание
+1 + PermGen - Metaspace
+2 + динамическое связывание
 3 - Object. wait()/notify()/notifyAll()
-4 - Join()
+4 - Thread Join()

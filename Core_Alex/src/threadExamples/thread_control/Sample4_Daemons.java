@@ -34,7 +34,7 @@ public class Sample4_Daemons {
         daemon1.setDaemon(true);
         daemon2.setDaemon(true);
 
-        Thread thread1 = new Thread(new MyRunnable("Thread1", 3));
+        Thread thread1 = new Thread(new MyRunnable("Thread1", 8));
         Thread thread2 = new Thread(new MyRunnable("Thread2", 5));
 
         thread1.start();

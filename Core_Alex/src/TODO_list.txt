@@ -30,4 +30,4 @@ A/C - acceptance criteria. Критерия приема кажддой зада
 1 + PermGen - Metaspace
 2 + динамическое связывание
 3 - Object. wait()/notify()/notifyAll()
-4 - Thread Join()
+4 + Thread Join()

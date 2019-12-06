@@ -6,8 +6,8 @@ import java.util.concurrent.atomic.AtomicReference;
 //todo: AtomicRefference
 public class MyStack<T> {
     AtomicReference<Element> head = new AtomicReference<>(null);
-    private int size=0;
-    private AtomicInteger sizeAtom=new AtomicInteger(0);
+    private int size = 0;
+    private AtomicInteger sizeAtom = new AtomicInteger(0);
 
     private class Element {
         T item;
@@ -21,7 +21,7 @@ public class MyStack<T> {
         Element current = new Element();
         current.item = element;
         current.previous = recent;
-
+        System.out.printf("%s: push() value %d\n", Thread.currentThread().getName(), element);
         head.set(current);
     }
 

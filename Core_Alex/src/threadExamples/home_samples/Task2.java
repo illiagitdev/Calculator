@@ -1,4 +1,4 @@
-package threadExamples.ome_samples;
+package threadExamples.home_samples;
 /*
 * Задача №2
   Написать многопоточную программу в которой будет создаваться список (LinkedList or ArrayList) и при выполнении

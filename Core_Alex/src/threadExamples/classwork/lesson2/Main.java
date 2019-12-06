@@ -1,20 +1,20 @@
-package threadExamples.classworr.lesson2;
+package threadExamples.classwork.lesson2;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 //todo: set(), compareAndSet()  перевірити як робитиме в багатопоточності
 public class Main {
     public static void main(String[] args) {
         MyStack<Integer> intStack = new MyStack<>();
-//        intStack.push(23);
-//        intStack.push(324);
-//        intStack.push(3214);
-//        System.out.println(intStack.pop());
-//        System.out.println(intStack.pop());
-//        System.out.println(intStack.pop());
-//        System.out.println(intStack.pop());
+        intStack.push(23);
+        intStack.push(324);
+        intStack.push(3214);
+        System.out.println(intStack.pop());
+        System.out.println(intStack.pop());
+        System.out.println(intStack.pop());
+        System.out.println(intStack.pop());
 
+        /*with set() & get() AtomicReference*/
         Thread thread1 = new Thread(() -> {
             while (true) {
                 try {
@@ -23,11 +23,11 @@ public class Main {
                     e.printStackTrace();
                 }
                 int tmp = random();
-                System.out.printf("%s push value %d\n", Thread.currentThread().getName(), tmp);
+                System.out.printf("%s push value %d , \t\tsize- %s\n", Thread.currentThread().getName(), tmp, intStack.size());
                 intStack.push(tmp);
-                System.out.printf("%s push unknown\n", Thread.currentThread().getName(), tmp);
+                System.out.printf("%s push unknown %s, \t\tsize- %s\n", Thread.currentThread().getName(), tmp, intStack.size());
                 intStack.push(random());
-                System.out.println(intStack.toString());
+                System.out.printf("%s from -> %s\n",intStack.toString(),Thread.currentThread().getName(), intStack.size());
             }
         });
         thread1.setName("Thread 1:");
@@ -40,9 +40,9 @@ public class Main {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                int tmp = random();
-                System.out.printf("%s pop() element %d\n", Thread.currentThread().getName(), intStack.pop());
-                System.out.printf("%s pop() element %d\n", Thread.currentThread().getName(), intStack.pop());
+                System.out.printf("%s pop() element %d , \t\tsize- %s\n", Thread.currentThread().getName(), intStack.pop(), intStack.size());
+                System.out.printf("%s pop() element %d ,\t\t size- %s\n", Thread.currentThread().getName(), intStack.pop(), intStack.size());
+                System.out.printf("%s from -> %s\n",intStack.toString(),Thread.currentThread().getName(), intStack.size());
             }
         });
         thread2.setName("Thread 2:");
@@ -56,19 +56,18 @@ public class Main {
                     e.printStackTrace();
                 }
                 int tmp = random();
-                System.out.printf("%s push value %d\n", Thread.currentThread().getName(), tmp);
+                System.out.printf("%s push value %d , \t\tsize- %s\n", Thread.currentThread().getName(), tmp, intStack.size());
                 intStack.push(tmp);
-                System.out.printf("%s pop() element %d\n", Thread.currentThread().getName(), intStack.pop());
-                System.out.printf("%s push unknown\n", Thread.currentThread().getName(), tmp);
+                System.out.printf("%s pop() element %d , \t\tsize- %s\n", Thread.currentThread().getName(), intStack.pop(), intStack.size());
+                System.out.printf("%s push unknown , \t\tsize- %s\n", Thread.currentThread().getName(), intStack.size());
                 intStack.push(random());
+                System.out.printf("%s from -> %s\n",intStack.toString(),Thread.currentThread().getName(), intStack.size());
             }
         });
         thread3.setName("Thread 3:");
         thread3.start();
 
-        while (true){
 
-        }
     }
 
     private static int random() {

@@ -12,7 +12,6 @@ public class MyStack<T> {
     private class Element {
         T item;
         Element previous;
-
     }
 
     public void push(T element) {
@@ -21,7 +20,7 @@ public class MyStack<T> {
         Element current = new Element();
         current.item = element;
         current.previous = recent;
-        System.out.printf("%s: push() value %d\n", Thread.currentThread().getName(), element);
+        System.out.printf("%s: incerted value %d\n", Thread.currentThread().getName(), element);
         head.set(current);
     }
 
@@ -32,8 +31,21 @@ public class MyStack<T> {
         }
         Element result = tmp.previous;
         T value = tmp.item;
+        System.out.printf("%s: deleted value %d\n", Thread.currentThread().getName(), value);
         head.set(result);
         return value;
+    }
 
+    @Override
+    public String toString() {
+        Element tmp = head.get();
+        String result="";
+        if (tmp != null) {
+            while (tmp.previous != null) {
+                result += tmp.toString()+"  ";
+                tmp=tmp.previous;
+            }
+        }
+        return result;
     }
 }

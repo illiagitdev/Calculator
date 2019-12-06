@@ -1,6 +1,7 @@
 package threadExamples.classworr.lesson2;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 //todo: set(), compareAndSet()  перевірити як робитиме в багатопоточності
 public class Main {
@@ -26,6 +27,7 @@ public class Main {
                 intStack.push(tmp);
                 System.out.printf("%s push unknown\n", Thread.currentThread().getName(), tmp);
                 intStack.push(random());
+                System.out.println(intStack.toString());
             }
         });
         thread1.setName("Thread 1:");
@@ -63,6 +65,10 @@ public class Main {
         });
         thread3.setName("Thread 3:");
         thread3.start();
+
+        while (true){
+
+        }
     }
 
     private static int random() {

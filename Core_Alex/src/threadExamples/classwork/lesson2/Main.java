@@ -1,5 +1,6 @@
 package threadExamples.classwork.lesson2;
 
+import java.util.Optional;
 import java.util.Random;
 
 //todo: set(), compareAndSet()  перевірити як робитиме в багатопоточності

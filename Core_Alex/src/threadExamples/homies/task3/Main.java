@@ -1,6 +1,13 @@
 package threadExamples.homies.task3;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 /*
 * Задача №3
@@ -14,14 +21,43 @@ A/C:
 * */
 public class Main {
     public static void main(String[] args) {
+        String httpsUrl = "g:/software/";//https://drive.google.com/open?id=1OnekofOjxUV-JkcCRPZjW1lYT9IZkTXz";
+        URL url = null;
+//        try {
+//            url = new URL(httpsUrl);
+//            HttpURLConnection connect = (HttpURLConnection) url.openConnection();
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         long startCount = System.currentTimeMillis();
 //        File files=new File(https://drive.google.com/open?id=1OnekofOjxUV-JkcCRPZjW1lYT9IZkTXz)
 
 
+//        int folderCount=countFiles(httpsUrl);
+//        System.out.println();
 
+        long stopCount = System.currentTimeMillis();
 
+        Runnable helloWorld=()-> System.out.println("hello world");
+        helloWorld.run();
 
-        long stopCount=System.currentTimeMillis();
+    }
 
+    private static int countFiles(String path) {
+        File file=new File(path);
+        int result=0;
+        if(!file.isDirectory()){
+            List<File> list= Arrays.asList(file.listFiles());
+            Stream<File> stream=list.stream();
+            stream.forEach(files->{
+                System.out.println(files.toString());
+            });
+            return result+=list.size();
+        }
+
+        return 0;
     }
 }

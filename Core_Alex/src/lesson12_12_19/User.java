@@ -2,11 +2,11 @@ package lesson12_12_19;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties
+//@JsonIgnoreProperties
 public class User {
     private String name;
     private String surname;
-private int salary;
+    private int salary;
     private String gender;
 
     public User() {
@@ -46,6 +46,6 @@ private int salary;
 
     @Override
     public String toString() {
-        return name ;
+        return name;
     }
 }

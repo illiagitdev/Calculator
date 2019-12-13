@@ -1,79 +1,106 @@
 package lesson12_12_19;
 
-import com.fasterxml.jackson.core.JsonFactory;
+
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.Objects;
+import java.util.Optional;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-//        javaDefault();
+    private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    private static final String APP_URL = "https://pingponggoit.herokuapp.com/";
+    private static final String GET_USER_URL = String.format("%s%s", APP_URL, "getUser");
+    private static final String QUERY_PARAMS = "name=Oleksandr&surname=Yanov&salary=12121&gender=male";
+    private static final String SEND_MESSAGE_URL = String.format("%s/%s", APP_URL, "sendMessage");
+    private static final String SEND_MESSAGE_CONTENT = "New message";
+    private static final String REQUEST_METHOD_GET = "GET";
 
-//        okHttpClient();
 
-//        postRequest();
-
-        getWithuerry();
+    public static void main(String[] args) throws Exception{
+        javaDefault();
+        getRequest();
+        postRequest();
+        getWithQuery();
     }
 
-    private static void getWithuerry() throws Exception {
+    private static void getRequest() throws IOException {
         OkHttpClient client = new OkHttpClient();
-        Response response = client.newCall(new Request.Builder()
-                .get()
-                .url("https://pingponggoit.herokuapp.com/getUser?name=Olexandr&surname=Yanov&salary=12121&gender=male")
-                .build()).execute();
-        System.out.println(new String(response.body().bytes()));
-        ObjectMapper mapper = new ObjectMapper();
 
-        String str = new String(response.body().bytes());
-        User user = null;
-        user = mapper.readValue(str, User.class);
-
-        System.out.println(user);
-    }
-
-    private static void postRequest() throws IOException {
-        OkHttpClient client = new OkHttpClient();
-        Response new_massege = client.newCall(new Request.Builder().url("https://pingponggoit.herokuapp.com/sendMessage")
-                .post(RequestBody.create(MediaType.parse("application/json"), "new massege"))
-                .build()).execute();
-        ObjectMapper mapper = new ObjectMapper();
-
-        String str = new String(new_massege.body().bytes());
-        User user = mapper.readValue(str, User.class);
-
-        System.out.println(user);
-    }
-
-    private static void okHttpClient() throws IOException {
-        OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url("https://pingponggoit.herokuapp.com/")
                 .get()
                 .build();
         Response response = client.newCall(request).execute();
+
         String headers = response.headers().toString();
-        String body = new String(response.body().bytes());
-        System.out.println("Headers " + headers);
-        System.out.println("Headers general: " + response.networkResponse());
-        System.out.println("Body " + body);
+        Response networkResponse = response.networkResponse();
+        String body = new String(Objects.requireNonNull(response.body()).bytes());
+
+        System.out.println("Headers: " + headers);
+        System.out.println("Headers general: " + networkResponse);
+        System.out.println("Body: " + body);
+
+        //CLOSE THE RESPONSE BODY
+        //FROM OKHTTP -> Response bodies must be {@linkplain ResponseBody closed} and may
+        //be consumed only once.
+        Optional.ofNullable(response.body()).ifPresent(ResponseBody::close);
     }
 
-    private static void javaDefault() throws IOException {
-        URL url = new URL("https://pingponggoit.herokuapp.com/");
-        URLConnection urlConnection = url.openConnection();
-        urlConnection.connect();
-        InputStream inputStream = urlConnection.getInputStream();
 
-        BufferedReader bufferedInput = new BufferedReader(new InputStreamReader(inputStream));
+    private static void postRequest() throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        Response response = client.newCall(new Request.Builder()
+                .url(SEND_MESSAGE_URL)
+                .post(RequestBody.create(JSON, SEND_MESSAGE_CONTENT))
+                .build()).execute();
+        System.out.println(new String(Objects.requireNonNull(response.body()).bytes()));
+        //CLOSE THE RESPONSE BODY
+        //FROM OKHTTP -> Response bodies must be {@linkplain ResponseBody closed} and may
+        //be consumed only once.
+        Optional.ofNullable(response.body()).ifPresent(ResponseBody::close);
+    }
+
+    private static void getWithQuery() throws Exception {
+        OkHttpClient client = new OkHttpClient();
+        Response response = client.newCall(new Request.Builder()
+                .get()
+                .url(String.format("%s?%s", GET_USER_URL, QUERY_PARAMS))
+                .build()).execute();
+//        User user = mapUserFromResponse(response);
+//        System.out.println("User name is " + user.getName());
+        //CLOSE THE RESPONSE BODY
+        //FROM OKHTTP -> Response bodies must be {@linkplain ResponseBody closed} and may
+        //be consumed only once.
+        Optional.ofNullable(response.body()).ifPresent(ResponseBody::close);
+    }
+
+//    private static User mapUserFromResponse(Response response) throws IOException {
+//        ObjectMapper mapper = new ObjectMapper();
+//        String string = new String(Objects.requireNonNull(response.body()).bytes());
+//        return mapper.readValue(string, User.class);
+//    }
+
+    private static void javaDefault() throws IOException {
+        URL url = new URL(APP_URL);
+        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+        urlConnection.setRequestMethod(REQUEST_METHOD_GET);
         StringBuffer buffer = new StringBuffer();
+        try (InputStream inputStream = urlConnection.getInputStream();
+             BufferedReader bufferedStream = new BufferedReader(new InputStreamReader(inputStream))) {
+            readResponse(buffer, bufferedStream);
+        }
+        System.out.println(buffer.toString());
+    }
+
+    private static void readResponse(StringBuffer buffer, BufferedReader bufferedStream) throws IOException {
         String response;
-        while ((response = bufferedInput.readLine()) != null) {
+        while ((response = bufferedStream.readLine()) != null) {
             buffer.append(response);
-            System.out.println(buffer.toString());
         }
     }
 }

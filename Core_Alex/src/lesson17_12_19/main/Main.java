@@ -15,52 +15,120 @@ public class Main {
     private static final String URL_PATH = "https://pingponggoit.herokuapp.com/";
 
     public static void main(String[] args) {
+        /*Открыть портал https://pingponggoit.herokuapp.com/swagger-ui.html
+        Ознакомиться с Swagger IP.
+        Задание 1.
+        Создать пользователя отправив JSON на endpoint /createUser. Получить ответ. Привести ответ к User.*/
+        postUser();
 
-//        postUser();
+        /*Задание 2.
+        Отправить запрос на endpoint /getUserById и получить пользователя по id. Получить ответ. Привести ответ к User.*/
 //        getById();
-        operateUser();
+
+        /*Задание 3.
+        Создать пользователя с помощью запроса /createUser, вывести список пользователей с помощью запроса /getUsers,
+        ответ прийдем в виде списка пользователей, привести данный JsonArray to List<User>.
+        После полученного списка, отправить запрос на endpoint /removeUser. После выполнить запрос /getUsers,
+        убедиться что вашего User, которого вы создавали и удаляли, нет в этом списке.*/
+//        operateUser();
+
+                /*Задание 4.
+        Получить список пользователей с помощью запроса /getUsers, перезаписать пользователя под любым идентификатором
+        на другого пользователя, выполнить запрос /getUsers и убедиться что ваш пользователь перезаписан на другого
+         пользователя.*/
+//                rewriteUserByID();
+
+               /* Задания 5.
+        С помощью JavaFX создать оболочку, в которой будут поля пользователя -> Name, Surname, Salary, Gender.
+        При нажатии кнопки Save, отпроавить запрос на ендпоинт /createUser и вывести сообщение, если сохранение
+        пользователя прошло успешно “Saved!” или Статус и сообщение об ошибке “404 Страница не найдена” etc. */
+        /*   separate file   */
+    }
+
+    private static void rewriteUserByID() {
+        System.out.println("\n\trewriteUserByID()\n");
+        try {
+            Response response = client.newCall(new Request.Builder().
+                    url(String.format("%s%s", URL_PATH, "getUsers")
+                    ).get().
+                    build()).
+                    execute();
+            ObjectMapper mapper = new ObjectMapper();
+            List<User> users = mapper.readValue(response.body().bytes(),new TypeReference<List<User>>(){});
+            System.out.println(users);
+
+            int id = (users.size() < 2) ? users.get(0).getId() : users.get(users.size() - 2).getId();
+            User userNew = new User("female", id, "Joan","Francy",2133);
+
+            String json = mapper.writeValueAsString(userNew);
+            System.out.println(json);
+
+            client.newCall(new Request.Builder().
+                    url(String.format("%s%s%s", URL_PATH, "overwrite?id=", id)).
+                    put(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)).
+                    build()).
+                    execute();
+
+            response = client.newCall(new Request.Builder().
+                    url(String.format("%s%s", URL_PATH, "getUsers")
+                    ).get().
+                    build()).
+                    execute();
+            users = mapper.readValue(response.body().bytes(),new TypeReference<List<User>>(){});
+            System.out.println(users);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void operateUser() {
-        /*Создать пользователя с помощью запроса /createUser, вывести список пользователей с помощью запроса /getUsers,
-        ответ прийдем в виде списка пользователей, привести данный JsonArray to List<User>.
-После полученного списка, отправить запрос на endpoint /removeUser. После выполнить запрос /getUsers, убедиться что
-вашего User, которого вы создавали и удаляли, нет в этом списке.*/
-        User user = new User("female", 83, "Jane", "Bunny", 1400);
-        ObjectMapper mapper=new ObjectMapper();
+        User user = new User("female", 83, "Jane1", "Bunny", 1450);
+        ObjectMapper mapper = new ObjectMapper();
         String json = null;
         try {
             json = mapper.writeValueAsString(user);
+            //add user
             Response response = client.newCall(new Request.Builder().
                     url(String.format("%s%s", URL_PATH, "createUser")).
                     post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)).build()).execute();
+            System.out.println("add user " + new String(response.body().bytes()));
+
+            //build & execute request for all users
             Request request = new Request.Builder().
                     url(String.format("%s%s", URL_PATH, "getUsers")).
                     get().
                     build();
+            response = client.newCall(request).execute();
+            List<User> users = mapper.readValue(new String(response.body().bytes()), new TypeReference<List<User>>() {
+            });
+            System.out.println("build & execute request for all users \n" + users);
 
-            Response response1 = client.newCall(request).execute();
-            List<User> users = mapper.readValue(new String(response1.body().bytes()), new TypeReference<List<User>>(){});
-
-            System.out.println(users);
             request = new Request.Builder().
-                    url(String.format("%s%s", URL_PATH, "getUserById?id=83")).
+                    url(String.format("%s%s", URL_PATH, "getUserById?id=926")).
                     get().
                     build();
-            response1 = client.newCall(request).execute();
-            System.out.println(new String(response1.body().bytes()));
-//
+            response = client.newCall(request).execute();
+            System.out.println(new String(response.body().bytes()));
+
+            //delete ang check if user deleted
+            user.setId(242);
+            json = mapper.writeValueAsString(user);
             request = new Request.Builder().
                     url(String.format("%s%s", URL_PATH, "removeUser")).
-                    delete(request.body()).
+                    delete(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)).
                     build();
-            Response removeUser = client.newCall(request).execute();
-//                    new Request.Builder().
-//                    url(String.format("%s%s", URL_PATH, "removeUser")).delete(request.body()).build()).execute();
-//            System.out.println(removeUser.body());
-//
-//            List<User> users1 = mapper.readValue(new String(response1.body().bytes()), new TypeReference<List<User>>(){});
-            System.out.println(new String(removeUser.body().bytes()));
+            response = client.newCall(request).execute();
+            System.out.println("remove response: " + new String(response.body().bytes()));
+
+            request = new Request.Builder().
+                    url(String.format("%s%s", URL_PATH, "getUsers")).
+                    get().
+                    build();
+            response = client.newCall(request).execute();
+            users = mapper.readValue(new String(response.body().bytes()), new TypeReference<List<User>>() {
+            });
+            System.out.println("build & execute request for all users(delete) \n" + users);
+
             Optional.ofNullable(response.body()).ifPresent(ResponseBody::close);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -70,7 +138,6 @@ public class Main {
     }
 
     private static void getById() {
-        /*Отправить запрос на endpoint /getUserById и получить пользователя по id. Получить ответ. Привести ответ к User.*/
         Request request = new Request.Builder().
                 url(String.format("%s%s", URL_PATH, "getUserById?id=325")).
                 get().
@@ -84,20 +151,27 @@ public class Main {
         }
     }
 
-    private static void postUser() throws IOException {
-        /*
-         * Создать пользователя отправив JSON на endpoint /createUser. Получить ответ. Привести ответ к User.*/
+    private static void postUser() {
         User user = new User("male", 4, "Jack", "Foo", 1200);
         ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(user);
+        String json = null;
+        try {
+            json = mapper.writeValueAsString(user);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
         System.out.println(json);
-        Response response = client.newCall(new Request.Builder().
-                url(String.format("%s%s", URL_PATH, "createUser")).
-                post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)).
-                build()).
-                execute();
-
-        System.out.println(new String(Objects.requireNonNull(response.body().bytes())));
+        Response response = null;
+        try {
+            response = client.newCall(new Request.Builder().
+                    url(String.format("%s%s", URL_PATH, "createUser")).
+                    post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)).
+                    build()).
+                    execute();
+            System.out.println(new String(Objects.requireNonNull(response.body().bytes())));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Optional.ofNullable(response.body()).ifPresent(ResponseBody::close);
     }
 }

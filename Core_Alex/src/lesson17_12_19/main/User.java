@@ -1,13 +1,29 @@
-package lesson17_12_19;
+package lesson17_12_19.main;
 
 //@JsonIgnoreProperties
 public class User {
-    private String name;
-    private String surname;
-    private int salary;
     private String gender;
+    private int id;
+    private String name;
+    private int salary;
+    private String surname;
+
+    public User(String gender, int id, String name, String surname, int salary) {
+        this.gender = gender;
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.surname = surname;
+    }
 
     public User() {
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -44,6 +60,12 @@ public class User {
 
     @Override
     public String toString() {
-        return name;
+        return "User{" +
+                "gender='" + gender + '\'' +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                ", surname='" + surname + '\'' +
+                '}' + "\n";
     }
 }

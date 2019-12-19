@@ -1,15 +1,21 @@
 package lesson17_12_19.main.mainFX;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lesson17_12_19.main.User;
+import okhttp3.*;
+
+import java.io.IOException;
+import java.util.Objects;
 
 /* Задания 5.
         С помощью JavaFX создать оболочку, в которой будут поля пользователя -> Name, Surname, Salary, Gender.
@@ -18,6 +24,8 @@ import lesson17_12_19.main.User;
 public class Main extends Application {
     private static final int WIDTH = 650;
     private static final int HEIGHT = 500;
+    private static OkHttpClient client = new OkHttpClient();
+    private static final String URL_PATH = "https://pingponggoit.herokuapp.com/";
 
     public static void main(String[] args) {
         launch(args);
@@ -26,7 +34,6 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Group root = new Group();
-//        Pane root1 = new Pane();
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -38,39 +45,62 @@ public class Main extends Application {
     }
 
     private void uiSetup(Group root) {
-        Button saveButton = new Button("Save");
-        saveButton.setTranslateX(75);
-        saveButton.setTranslateY(400);
-
-
         VBox vBox = new VBox();
+        vBox.setSpacing(10);
 
-        Label labelName = new Label();
+        Button saveButton = new Button("Save");
+        saveButton.setTranslateX(50);
+
         TextField setName = new TextField("Name");
-        vBox.getChildren().addAll(labelName, setName);
+        vBox.getChildren().addAll(setName);
 
-        Label labelSurname = new Label();
         TextField setSurname = new TextField("Surname");
-        vBox.getChildren().addAll(labelSurname, setSurname);
+        vBox.getChildren().addAll(setSurname);
 
-        Label labelGender = new Label();
         TextField setGender = new TextField("Gender");
-        vBox.getChildren().addAll(labelGender, setGender);
+        vBox.getChildren().addAll(setGender);
 
-        Label labelID = new Label();
         TextField setID = new TextField("ID");
-        vBox.getChildren().addAll(labelID, setID);
+        vBox.getChildren().addAll(setID);
 
-        Label labelSalary = new Label();
         TextField setSalary = new TextField("Salary");
-        vBox.getChildren().addAll(labelSalary, setSalary);
+        vBox.getChildren().addAll(setSalary);
 
-        saveButton.setOnMouseClicked((event -> {
-            User user= new User(setGender.getText(), getAnInt(setID.getText()),setName.getText(),setSurname.getText(),getAnInt(setSalary.getText()));
-            System.out.println(user);
-        }));
+        TextArea result = new TextArea();
+        result.setWrapText(true);
 
-        root.getChildren().addAll(saveButton, vBox);
+        saveButton.setOnMouseClicked(event -> {
+            User user = new User(setGender.getText(), getAnInt(setID.getText()), setName.getText(), setSurname.getText(), getAnInt(setSalary.getText()));
+            ObjectMapper mapper = new ObjectMapper();
+            String userJSON = null;
+            String requestResult = "";
+            try {
+                userJSON = mapper.writeValueAsString(user);
+                System.out.println(user);
+                Response response = client.newCall(new Request.Builder().
+                        url(String.format("%s%s", URL_PATH, "createUser")).
+                        post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), userJSON)).
+                        build()).
+                        execute();
+                requestResult = new String(Objects.requireNonNull(response.body().bytes()));
+                System.out.println(requestResult);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            requestResult = "Saved!\n" + requestResult;
+            System.out.println(requestResult);
+            if (!result.getText().isEmpty())
+                result.clear();
+            result.appendText(requestResult);
+        });
+
+        vBox.getChildren().addAll(saveButton);
+        HBox hBox = new HBox();
+        hBox.setSpacing(25);
+        hBox.getChildren().addAll(vBox, result);
+        root.getChildren().addAll(hBox);
     }
 
     private int getAnInt(String value) {
@@ -87,6 +117,5 @@ public class Main extends Application {
 
         stage.setHeight(HEIGHT);
         stage.setWidth(WIDTH);
-
     }
 }

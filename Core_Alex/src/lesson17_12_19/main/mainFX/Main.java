@@ -16,6 +16,7 @@ import okhttp3.*;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
 /* Задания 5.
         С помощью JavaFX создать оболочку, в которой будут поля пользователя -> Name, Surname, Salary, Gender.
@@ -33,6 +34,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        CompletableFuture future;
         Group root = new Group();
 
         Scene scene = new Scene(root);

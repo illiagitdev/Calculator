@@ -13,7 +13,7 @@ public class Client2 {
         DatagramSocket socket = new DatagramSocket();
         DatagramPacket packet = new DatagramPacket(new byte[1024],124, InetAddress.getLocalHost(), PORT);
         packet.setData();
-        
+
         socket.receive(packet);
 //        System.out.println(new String(packet.getData()));
         System.out.println("Send the message!");

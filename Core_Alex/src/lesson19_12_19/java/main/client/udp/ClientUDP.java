@@ -1,4 +1,4 @@
 package lesson19_12_19.java.main.client.udp;
 
-public class Client1 {
+public class ClientUDP {
 }
